@@ -1,0 +1,25 @@
+{
+  "name": "luxe-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "make-admin": "node scripts/make-admin.js",
+    "migrate:catalog": "node scripts/migrate-legacy-catalog.js",
+    "check": "node --check server.js && node --check middleware/authMiddleware.js && node --check models/User.js && node --check models/Category.js && node --check models/Product.js && node --check models/Order.js && node --check routes/auth.js && node --check routes/products.js && node --check routes/categories.js && node --check routes/orders.js && node --check routes/checkout.js && node --check scripts/make-admin.js && node --check scripts/migrate-legacy-catalog.js",
+    "test": "npm run check && node --test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.9.2"
+  }
+}

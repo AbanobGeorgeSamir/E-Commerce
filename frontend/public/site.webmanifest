@@ -1,0 +1,16 @@
+{
+  "name": "Luxe Store",
+  "short_name": "Luxe Store",
+  "description": "Discover thoughtfully selected products at Luxe Store.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#f8fafc",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
