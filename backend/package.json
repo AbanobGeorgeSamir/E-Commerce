@@ -1,0 +1,29 @@
+{
+  "name": "luxe-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "make-admin": "node scripts/make-admin.js",
+    "check:database": "node scripts/check-database.js",
+    "migrate:catalog": "node scripts/migrate-legacy-catalog.js",
+    "check": "node --check server.js && node --check scripts/check-database.js && node --check middleware/authMiddleware.js && node --check middleware/adminMiddleware.js && node --check middleware/rateLimit.js && node --check utils/authCookies.js && node --check utils/images.js && node --check utils/passwords.js && node --check utils/responses.js && node --check models/User.js && node --check models/Category.js && node --check models/Product.js && node --check models/Order.js && node --check routes/admin.js && node --check routes/auth.js && node --check routes/products.js && node --check routes/categories.js && node --check routes/orders.js && node --check routes/checkout.js && node --check scripts/make-admin.js && node --check scripts/migrate-legacy-catalog.js",
+    "test": "npm run check && node --test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.8",
+    "express": "^5.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.11.2"
+  },
+  "engines": {
+    "node": "24.x"
+  }
+}
