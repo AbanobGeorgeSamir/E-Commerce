@@ -1,52 +1,84 @@
-# 🛒 E-Commerce (MERN Stack)
+# 🛒 Luxe Store — Full-Stack MERN E-Commerce
 
-A full-stack e-commerce platform with a React/Vite frontend and an Express/MongoDB REST API — featuring authentication, product management, an admin dashboard, and Vercel deployment support.
+A modern, responsive e-commerce web platform engineered with a React 19 / Vite storefront, Tailwind CSS v4 styling, and an Express 5 / MongoDB Atlas backend API deployed on Vercel.
 
-![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
-![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
+[![Live Storefront](https://img.shields.io/badge/Live_Site-Vercel_Deployment-blue?style=for-the-badge&logo=vercel)](https://e-commerce-frontend-abanob-server.vercel.app)
+[![API Health](https://img.shields.io/badge/API_Health-Passing-success?style=for-the-badge&logo=node.js)](https://ecommerce-server-api-abanob.vercel.app/api/health)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
-## ✨ Features
+---
 
-- 🔐 JWT-based user authentication
-- 🛍️ Product catalog with categories and admin CRUD
-- 🛒 Shopping cart and checkout
-- 👤 Customer and admin role separation
-- 🧪 Automated tests
-- 🚀 Vercel deployment configuration included
+## 🌟 Key Features
 
-## 🛠️ Tech Stack
+- **Product Catalog & Discovery:** Dynamic product browsing, categories, price filtering, and keyword search.
+- **Cart & Order Management:** Client-side cart state management with real-time tax and shipping calculations.
+- **Authentication & Security:** Secure JWT session handling with HttpOnly cookies, password hashing with bcrypt, and express-rate-limit protection.
+- **Admin Control Panel:** Dedicated dashboard routes to create, edit, and delete products, organize categories, and review customer orders.
+- **Vercel Serverless Architecture:** Frontend reverse-proxy rewrite to ensure first-party cookie domains and secure cross-origin communication.
 
-| Layer | Technology |
-|---|---|
-| Frontend | React 18, Vite, JavaScript |
-| Backend | Node.js, Express |
-| Database | MongoDB (Mongoose) |
-| Auth | JWT, bcrypt |
-| Deployment | Vercel |
+---
 
-## 🚀 Getting Started
+## 🛠️ Technology Stack
 
-```bash
-git clone https://github.com/AbanobGeorgeSamir/E-Commerce.git
-cd E-Commerce
+- **Frontend:** React 19, Vite 8, Tailwind CSS v4, Axios, React Router 7, Lucide Icons
+- **Backend:** Node.js 24 LTS, Express 5, Mongoose 9, JWT
+- **Database:** MongoDB Atlas (TLS enabled)
+- **Deployment:** Vercel (Fluid Compute & Edge Network)
+
+---
+
+## 📐 System Architecture
+
+```
+[ Browser Client ]
+        │
+        ▼
+[ React 19 SPA (Vercel Edge) ] ─── (/api/* proxy) ───► [ Express 5 Serverless (Vercel) ]
+                                                                     │
+                                                                     ▼
+                                                          [ MongoDB Atlas Cluster ]
 ```
 
-**Backend:**
+---
+
+## 🚀 Local Development Setup
+
+### 1. Prerequisites
+- Node.js 24.x LTS
+- MongoDB connection URI
+
+### 2. Backend Configuration
 ```bash
 cd backend
-cp .env.example .env   # Set MONGODB_URI, JWT_SECRET, PORT
-npm install && npm start
+cp .env.example .env
+npm install
+npm start
 ```
+*Configure `MONGODB_URI`, `JWT_SECRET`, and `CLIENT_ORIGIN` inside `backend/.env`.*
 
-**Frontend:**
+### 3. Frontend Configuration
 ```bash
-cd frontend
-cp .env.example .env   # Set VITE_API_URL
-npm install && npm run dev
+cd ../frontend
+cp .env.example .env
+npm install
+npm run dev
 ```
+*Configure `VITE_API_URL=http://localhost:8000/api` inside `frontend/.env`.*
+
+---
+
+## 🌐 Production Deployments
+
+| Component | Target URL |
+|---|---|
+| **Storefront UI** | [https://e-commerce-frontend-abanob-server.vercel.app](https://e-commerce-frontend-abanob-server.vercel.app) |
+| **Backend REST API** | [https://ecommerce-server-api-abanob.vercel.app](https://ecommerce-server-api-abanob.vercel.app) |
+
+---
+
+## 📄 License
+
+This repository is licensed under the [MIT License](LICENSE).
 
 ## 👤 Author
 
